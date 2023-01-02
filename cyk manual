@@ -43,8 +43,8 @@ def concat(string1, string2):
     #lhs(hasil)
 
 
-def union(hasil1, hasil2, hasil3):
-    temp1 = hasil1 + hasil2 + hasil3
+def union(hasil1, hasil2, hasil3, hasil4):
+    temp1 = hasil1 + hasil2 +hasil3 + hasil4
     temp = []
     for x in temp1:
         if x not in temp:
@@ -74,19 +74,24 @@ def init(kalimat):
         concat(string1, string2)
 """
 #tes=[]
-string1="P, O, Ket, VP, Verb"
-string2="Y6, Pel, Ket, PP"
+string1="S, O, Pel, Ket, NP, Noun"
+string2="K"
 hasil1 = concat(string1, string2)
 
-string3="Y2, Y3, Y4, Y5"
-string4="Y5, S, O, Pel, Ket, NP"
+string3="Y5, S, O, Pel, Ket, NP"
+string4="X3, Y2, Y3, Y4, Y5"
 hasil2 = concat(string3, string4)
 
-string5="X3, Y2, Y3, Y4, Y5"
-string6="S, O, Pel, NP, PropNoun"
+string5="K, Y4, Y6"
+string6="Y6, Pel, Ket,  PP"
 hasil3= concat(string5, string6)
 
-hasil = union(hasil1, hasil2, hasil3)
+string7="K"
+string8="S, O, Pel, Ket, NP, Noun"
+hasil4= concat(string7, string8)
+
+print("Hasil: ")
+hasil = union(hasil1, hasil2, hasil3, hasil4)
 #hasil = union(hasil1, hasil2)
 
 
