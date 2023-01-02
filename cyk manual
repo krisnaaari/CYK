@@ -1,0 +1,79 @@
+import rules
+cnf = rules.rules
+
+X = {
+    1: {1: [], 2: [], 3: [], 4: [], 5: [], 6: []},
+    2: {2: [], 3: [], 4: [], 5: [], 6: []},
+    3: {3: [], 4: [], 5: [], 6: []},
+    4: {4: [], 5: [], 6: []},
+    5: {5: [], 6: []},
+    6: {6: []}
+}
+
+
+def lhs(kata):
+    temp = []
+    #uji = kata.split(", ")
+    for x, y in cnf.items():
+        for z in kata:
+            if z in y:
+                print("({}) ada di {}".format(z, x))
+                temp.append(x)
+
+    return temp
+
+
+def concat(string1, string2):
+    global fix
+    string1 = string1.split(", ")
+    string2 = string2.split(", ")
+    hasil=[]
+    for x in string1:
+        for y in string2:
+            z = x+" "+y
+            if(z not in hasil):
+                hasil.append(z)
+    
+
+    for x in hasil:
+        print(x, end=", ")
+    
+    print("\n\n")
+    return hasil
+    #lhs(hasil)
+
+"""
+def union():
+
+"""
+
+"""
+def init(kalimat):
+    input = kalimat.split()
+    n = len(input)
+
+    # bottom row
+    for i in range(n):
+        X[i][i]= lhs(input[i])
+
+    for i in range(1, n):
+        for j in range(2, n):
+
+
+    for x in range(1, 2):
+        concat(string1, string2)
+"""
+#tes=[]
+# masukkan cell Xi,j
+string1="S, O, Pel, Ket, NP, Noun"
+#tes.append(string1)
+# masukkan cell Xi,j
+string2="S, O, Pel, NP, PropNoun"
+#tes.append(string2)
+hasil = concat(string1, string2)
+
+#kalimat = input("Masukkan kalimat: ")
+#init(kalimat)
+X[1][2].extend(lhs(hasil))
+for x in X[1][2]:
+    print(x, end=", ")
